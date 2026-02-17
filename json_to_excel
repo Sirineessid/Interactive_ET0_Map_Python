@@ -1,0 +1,35 @@
+import pandas as pd
+import json
+import sys
+import os
+
+def json_to_excel():
+    """Convert weather_data_all_grid_points.json to Excel"""
+    json_file = "output/weather_data_all_grid_points.json"
+    excel_file = "output/weather_data.xlsx"
+    
+    # Vérifier si le fichier existe
+    if not os.path.exists(json_file):
+        print(f"❌ Fichier non trouvé: {json_file}")
+        print(f"📁 Répertoire courant: {os.getcwd()}")
+        return
+    
+    print(f"📖 Lecture de {json_file}...")
+    
+    with open(json_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    df = pd.json_normalize(
+        data['results'], 
+        'weather_data', 
+        ['geohash', 'point_name', 'latitude', 'longitude']
+    )
+    
+    df.to_excel(excel_file, index=False)
+    print(f"✅ Conversion réussie! {len(df)} lignes")
+    print(f"📁 Fichier: {excel_file}")
+    df.to_excel(r'C:\Users\Lenovo\Desktop\weather_data.xlsx', index=False)
+    print(f"✅ Fichier également enregistré sur le bureau: C:\\Users\\Lenovo\\Desktop\\weather_data.xlsx")
+
+if __name__ == "__main__":
+    json_to_excel()

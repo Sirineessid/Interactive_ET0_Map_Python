@@ -1,0 +1,15 @@
+geopandas
+shapely
+pyproj
+requests
+pandas
+psycopg2-binary
+geohash2
+folium
+pyproj 
+matplotlib
+dbfread
+plotly 
+timedelta
+branca
+python-dotenv
