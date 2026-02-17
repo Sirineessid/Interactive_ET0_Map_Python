@@ -2,14 +2,7 @@ import os
 import psycopg2
 import geopandas as gpd
 import geohash2
-
-DB_CONFIG = {
-    "dbname": "nasa_et0",
-    "user": "postgres",
-    "password": "Sirine123",
-    "host": "localhost",
-    "port": 5432
-}
+#DBCONFIG 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHP_PATH = os.path.join(BASE_DIR, "data/ppi", "ppi_piait.shp")
