@@ -7,11 +7,6 @@ import json
 # Database configuration
 # -----------------------------
 DB_CONFIG = {
-    "dbname": "nasa_et0",
-    "user": "postgres",
-    "password": "Sirine123",
-    "host": "127.0.0.1",
-    "port": "5432"
 }
 
 # -----------------------------
